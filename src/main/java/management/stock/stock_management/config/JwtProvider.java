@@ -22,7 +22,7 @@ public class JwtProvider {
                 .setIssuedAt(new Date())
                 .setExpiration(new Date(System.currentTimeMillis() + 864000000)) // 24 hours expiration
                 .claim("username", auth.getName())
-                .claim("uid", uid) // Add uid to the claims
+                .claim("uid", uid)
                 .signWith(key)
                 .compact();
     }
